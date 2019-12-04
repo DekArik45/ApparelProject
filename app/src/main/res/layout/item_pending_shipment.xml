@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/item_profile_product_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/profile_list1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/foto_produk1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/foto_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/profile_list1"
+                app:layout_constraintTop_toTopOf="@id/profile_list1" />
+
+            <TextView
+                android:id="@+id/shipement_nama_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Product 1"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@id/foto_produk1"
+                app:layout_constraintTop_toTopOf="@+id/foto_produk1" />
+
+            <TextView
+                android:id="@+id/shipment_ukuran_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="L"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@id/foto_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipement_nama_produk1" />
+
+            <TextView
+                android:id="@+id/shipment_warna_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/poppins"
+                android:text="Hot Pink"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@id/shipment_ukuran_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipement_nama_produk1" />
+
+            <TextView
+                android:id="@+id/shipment_jumlah_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="x 2"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/profile_list1"
+                app:layout_constraintTop_toTopOf="@+id/shipement_nama_produk1" />
+
+            <TextView
+                android:id="@+id/shipment_harga1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="Rp 200.000"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/profile_list1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_jumlah_produk1" />
+
+            <TextView
+                android:id="@+id/teks_harga1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="Total Pembayaran"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/foto_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_harga1" />
+
+            <TextView
+                android:id="@+id/shipment_total_harga1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Rp 400.000"
+                android:textColor="@color/harga"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/shipment_harga1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_harga1" />
+
+            <TextView
+                android:id="@+id/shipment_tanggal_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppins"
+                android:text="11 Mei 2019"
+                android:textSize="8sp"
+                app:layout_constraintStart_toEndOf="@id/foto_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_total_harga1" />
+
+            <TextView
+                android:id="@+id/shipment_asal_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:fontFamily="@font/poppins"
+                android:text="Surabaya"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toStartOf="@id/shipment_pengiriman_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_total_harga1" />
+
+            <TextView
+                android:id="@+id/shipment_pengiriman_produk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppins"
+                android:text="Belum dikirim"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@+id/shipment_total_harga1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_total_harga1" />
+
+            <View
+                android:id="@+id/garis2"
+                android:layout_width="0dp"
+                android:layout_height="0.3dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/black_transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/foto_produk1"
+                app:layout_constraintTop_toBottomOf="@id/shipment_tanggal_produk1" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

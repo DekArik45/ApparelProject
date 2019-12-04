@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context=".LoginActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Toolbar>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="24dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="100px"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="80dp"
+                android:src="@drawable/logo_apparel_ijo"/>
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_marginTop="100px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:textSize="26dp"
+                android:textColor="@color/colorPrimaryText"/>
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_marginTop="50px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_transparent"
+                android:text="Username" />
+
+            <EditText
+                android:id="@+id/login_usernameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorUnderlineDivider"
+                android:hint="Masukkan Username"/>
+
+            <TextView
+                android:id="@+id/tvPassword"
+                android:layout_marginTop="50px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_transparent"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/login_passwordText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:textColor="@color/colorUnderlineDivider"
+                android:hint="Masukkan Password"/>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/login_button"
+                android:layout_gravity="center"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/big_button_height"
+                android:layout_marginTop="24dp"
+                fancy:fb_defaultColor="@color/colorSuccess"
+                fancy:fb_radius="30dp"
+                android:padding="8dp"
+                fancy:fb_text="MASUK"
+                fancy:fb_textColor="#FFFFFF"
+                fancy:fb_fontIconResource="\uf0a9"
+                android:textSize="@dimen/big_button_fontSize"
+                fancy:fb_iconPosition="left" />
+
+            <!--divider-->
+            <View
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/MasukSebagaiIndustri"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorUnderlineDivider" />
+            <!--end divider-->
+
+            <TextView
+                android:id="@+id/login_toRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Or Click Here To Register"
+                android:textColor="@color/black_transparent"
+                android:textStyle="normal"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/register_copyright"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="24dp"
+                android:textAlignment="center"
+                android:textColor="@color/black_transparent"
+                android:layout_marginBottom="24dp"
+                android:text="© 2019 Apparel Team"
+                android:layout_gravity="bottom"
+                android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

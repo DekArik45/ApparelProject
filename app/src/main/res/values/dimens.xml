@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_vertical_margin_login">16dp</dimen>
+    <dimen name="activity_horizontal_margin_login">16dp</dimen>
+    <dimen name="big_button_height">45dp</dimen>
+    <dimen name="big_button_fontSize">16sp</dimen>
+</resources>

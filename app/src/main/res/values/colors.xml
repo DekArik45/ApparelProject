@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fafafa</color>
+    <color name="colorSecondary">#3F51B5</color>
+    <color name="colorPrimaryLight">#FFFFFF</color>
+    <!--<color name="colorPrimaryDark">#c7c7c7</color>-->
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorSecondaryText">#ffffff</color>
+    <color name="colorAccent">#FF6A6A</color>
+    <color name="transparent">#00FAFAFA</color>
+    <color name="gray_darker">#A9A9A9</color>
+    <color name="top_gray">#878787</color>
+    <color name="harga">#f24333</color>
+    <color name="colorSuccess">#03c04a</color>
+    <color name="colorWarning">#ff9f43</color>
+
+    <color name="colorUnderlineDivider">#a5afaeae</color>
+    <color name="black_transparent">#AF000000</color>
+</resources>

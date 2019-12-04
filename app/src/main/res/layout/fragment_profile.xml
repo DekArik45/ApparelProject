@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#F5F6F8"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ProfileFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/profile_atas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/profile_bawah"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_foto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="64dp"
+                android:src="@drawable/foto_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/profile_nama"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/profile_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="64dp"
+                android:text="Adji Nur"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@id/profile_foto"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:text="AdjiNur@email.com"
+                app:layout_constraintStart_toEndOf="@id/profile_foto"
+                app:layout_constraintTop_toBottomOf="@id/profile_nama" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/profile_bawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@drawable/profile_rounded_layout"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/profile_atas">
+
+            <ImageView
+                android:id="@+id/profile_icon1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/profile_icon_shipment"
+                app:layout_constraintEnd_toStartOf="@id/profile_pending_shipment"
+                app:layout_constraintStart_toStartOf="@id/profile_bawah"
+                app:layout_constraintTop_toTopOf="@id/profile_bawah" />
+
+            <Button
+                android:id="@+id/profile_pending_shipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/profile_menu"
+                android:gravity="start"
+                android:paddingTop="15dp"
+                android:text="Pending Shipment"
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_icon1"
+                app:layout_constraintTop_toTopOf="@id/profile_bawah" />
+
+            <ImageView
+                android:id="@+id/profile_next1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:src="@drawable/profile_icon_next"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_pending_shipment"
+                app:layout_constraintTop_toTopOf="@id/profile_bawah" />
+
+            <ImageView
+                android:id="@+id/profile_icon2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/profile_icon_pending"
+                app:layout_constraintEnd_toStartOf="@id/profile_pending_payment"
+                app:layout_constraintStart_toStartOf="@id/profile_bawah"
+                app:layout_constraintTop_toBottomOf="@id/profile_icon1" />
+
+            <Button
+                android:id="@+id/profile_pending_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/profile_menu"
+                android:gravity="start"
+                android:paddingTop="15dp"
+                android:text="Pending Payments"
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/profile_finished_order"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_icon2"
+                app:layout_constraintTop_toBottomOf="@id/profile_pending_shipment" />
+
+            <ImageView
+                android:id="@+id/profile_next2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:src="@drawable/profile_icon_next"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_pending_payment"
+                app:layout_constraintTop_toBottomOf="@id/profile_next1" />
+
+            <ImageView
+                android:id="@+id/profile_icon3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/profile_icon_finish"
+                app:layout_constraintEnd_toStartOf="@id/profile_finished_order"
+                app:layout_constraintStart_toStartOf="@id/profile_bawah"
+                app:layout_constraintTop_toBottomOf="@id/profile_icon2" />
+
+            <Button
+                android:id="@+id/profile_finished_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/profile_menu"
+                android:gravity="start"
+                android:paddingTop="15dp"
+                android:text="Finished Orders"
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/profile_pending_payment"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_bawah"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_icon3" />
+
+            <ImageView
+                android:id="@+id/profile_next3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:src="@drawable/profile_icon_next"
+                app:layout_constraintEnd_toEndOf="@id/profile_bawah"
+                app:layout_constraintStart_toEndOf="@id/profile_finished_order"
+                app:layout_constraintTop_toBottomOf="@id/profile_next2" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
