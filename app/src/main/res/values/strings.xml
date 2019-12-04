@@ -8,4 +8,12 @@
     <string name="search">Search</string>
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
+    <string-array name="Kategori">
+        <item>T-Shirt</item>
+        <item>Sweater</item>
+        <item>Pants</item>
+        <item>Coats</item>
+        <item>Jersey</item>
+        <item>Undershirt</item>
+    </string-array>
 </resources>
