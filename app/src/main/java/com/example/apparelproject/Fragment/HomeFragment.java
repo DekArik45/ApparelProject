@@ -160,7 +160,7 @@ public class HomeFragment extends Fragment {
 
     public void settingDataListFavorite(){
         list.addAll(ProductData.getListData());
-        mRecyclerProduct.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 3));
+        mRecyclerProduct.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 1));
         ItemProductMainAdapter productAdapter = new ItemProductMainAdapter(getContext());
         productAdapter.setListProduct(list);
         mRecyclerProduct.setAdapter(productAdapter);
