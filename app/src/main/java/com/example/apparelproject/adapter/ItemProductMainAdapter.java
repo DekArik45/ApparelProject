@@ -39,7 +39,7 @@ public class ItemProductMainAdapter extends RecyclerView.Adapter<ItemProductMain
     public void onBindViewHolder(@NonNull GridViewHolder gridViewHolder, final int position) {
 
         gridViewHolder.title.setText(getListProduct().get(position).getNama());
-        gridViewHolder.price.setText(getListProduct().get(position).getHarga());
+//        gridViewHolder.price.setText(getListProduct().get(position).getHarga());
         Glide.with(context)
                 .load(getListProduct().get(position).getFoto())
                 .apply(new RequestOptions())
@@ -85,7 +85,7 @@ public class ItemProductMainAdapter extends RecyclerView.Adapter<ItemProductMain
             imgPhoto = itemView.findViewById(R.id.item_product_main_image);
             mCard = itemView.findViewById(R.id.item_product_main_card);
             title = itemView.findViewById(R.id.item_product_main_title);
-            price = itemView.findViewById(R.id.item_product_main_price);
+//            price = itemView.findViewById(R.id.item_product_main_price);
         }
     }
 }
