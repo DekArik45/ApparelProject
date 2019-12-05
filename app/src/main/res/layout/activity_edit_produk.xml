@@ -151,18 +151,18 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="24sp"
-                        android:text="Reset" />
+                        android:text="Cancel" />
 
                     <Button
                         android:id="@+id/create_produk_save"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="50dp"
-                        android:background="@drawable/button_rounded_green"
+                        android:background="@drawable/button_rounded_white"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="24sp"
                         android:layout_marginBottom="24sp"
-                        android:text="Save" />
+                        android:text="Update" />
 
                 </LinearLayout>
 
