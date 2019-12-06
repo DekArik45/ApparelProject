@@ -165,34 +165,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvRegisNama" />
 
-
-                    <TextView
-                        android:id="@+id/tvRegisEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="Email"
-                        android:textColor="@color/black_transparent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_nama" />
-
-                    <EditText
-                        android:id="@+id/register_emailText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:ems="10"
-                        android:hint="Masukkan Email"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/colorUnderlineDivider"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvRegisEmail" />
-
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/register_button"
                         style="@style/Widget.AppCompat.Button.Borderless"
@@ -206,13 +178,13 @@
                         android:textSize="@dimen/big_button_fontSize"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_emailText"
+                        app:layout_constraintTop_toBottomOf="@+id/register_nama"
                         fancy:fb_defaultColor="@color/colorSuccess"
                         fancy:fb_fontIconResource="\uf0a9"
                         fancy:fb_iconPosition="left"
                         fancy:fb_radius="30dp"
                         fancy:fb_text="REGISTER"
-                        fancy:fb_textColor="@color/black_transparent" />
+                        fancy:fb_textColor="@color/colorPrimaryDark" />
 
                     <TextView
                         android:id="@+id/register_toLogin"

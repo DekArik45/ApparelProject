@@ -88,9 +88,9 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = (FrameLayout) inflater.inflate(R.layout.fragment_profile, container, false);
-        btnPendingShipment = rootView.findViewById(R.id.profile_pending_shipment);
-        btnPendingPayment = rootView.findViewById(R.id.profile_pending_payment);
-        btnFinished = rootView.findViewById(R.id.profile_finished_order);
+//        btnPendingShipment = rootView.findViewById(R.id.profile_pending_shipment);
+//        btnPendingPayment = rootView.findViewById(R.id.profile_pending_payment);
+//        btnFinished = rootView.findViewById(R.id.profile_finished_order);
 
         sharedpreferences = getActivity().getApplicationContext().getSharedPreferences(Fields.PREFERENCE, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(Fields.SESSION_STATUS, false);
@@ -106,8 +106,8 @@ public class ProfileFragment extends Fragment {
         username = sharedpreferences.getString(Fields.USERNAME, null);
         password = sharedpreferences.getString(Fields.PASSWORD, null);
 
-        profileEmail = rootView.findViewById(R.id.profile_email);
-        profileNama = rootView.findViewById(R.id.profile_nama);
+//        profileEmail = rootView.findViewById(R.id.profile_email);
+//        profileNama = rootView.findViewById(R.id.profile_nama);
         profileImage = rootView.findViewById(R.id.profile_foto);
 
         profileNama.setText(nama);

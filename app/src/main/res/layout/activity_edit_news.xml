@@ -70,15 +70,15 @@
 
                 </android.support.design.widget.TextInputLayout>
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/edit_news_addimage"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/add_image"
-                    />
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/edit_news_addimage"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:src="@drawable/add_image"-->
+<!--                    />-->
 
                 <Button
                     android:id="@+id/edit_news_btnaddimage"

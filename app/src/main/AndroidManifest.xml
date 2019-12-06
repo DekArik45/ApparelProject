@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".EditNewsActivity"></activity>
+        <activity android:name=".RiwayatActivity"></activity>
+        <activity android:name=".CheckoutDataActivity" />
+        <activity android:name=".EditNewsActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateProdukActivity"></activity>
+        <activity android:name=".CreateProdukActivity" />
         <activity android:name=".ProductCategoryActivity" />
         <activity android:name=".FinishedOrderActivity" />
         <activity android:name=".PendingPaymentActivity" />

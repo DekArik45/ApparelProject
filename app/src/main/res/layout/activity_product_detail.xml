@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.Toolbar
@@ -18,249 +17,202 @@
         app:layout_scrollFlags="enterAlways"
         app:title="" />
 
+    <ScrollView
+        android:id="@+id/scrollViewRecords"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutRecords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/product_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:srcCompat="@drawable/product1" />
+
+            <TextView
+                android:id="@+id/product_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="18sp"
+                android:text="Tees Chopperland LS Black" />
+
+            <TextView
+                android:id="@+id/detail_categoryname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"
+                android:text="CATEGORY" />
+
+            <TextView
+                android:id="@+id/product_detail_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Pakaian Pria, Kaos"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/detail_brandname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"
+                android:text="BRAND"/>
+
+            <TextView
+                android:id="@+id/product_detail_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Elders Company"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/detail_colorname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"
+                android:text="COLOR" />
+
+            <TextView
+                android:id="@+id/product_detail_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Black"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/detail_sizename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"
+                android:text="SIZE" />
+
+            <TextView
+                android:id="@+id/product_detail_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="S, M, L, XL"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/detail_materialname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"
+                android:text="MATERIAL" />
+
+            <TextView
+                android:id="@+id/product_detail_material"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Cotton"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </ScrollView>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/layoutContainer"
         android:layout_width="match_parent"
-        android:layout_height="79dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_detail_toolbar"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/product_detail_name"
-            android:layout_width="0dp"
+            android:id="@+id/detail_pricename"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="64dp"
             android:fontFamily="@font/poppins"
-            android:text="Tees Chopperland LS Black"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="12sp"
+            android:text="PRICE"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/product_detail_price"/>
 
         <TextView
             android:id="@+id/product_detail_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppins"
             android:text="Rp 275.000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_detail_name" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/product_detail_image"
-            android:layout_width="match_parent"
-            android:layout_height="215dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/product1" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginBottom="328dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/detail_focus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="184dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="184dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/poppins"
-            android:text="Details"
-            android:textColor="#F44336"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.538" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <TextView
-            android:id="@+id/product_detail_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Pakaian Pria, Kaos"
-            android:textSize="11dp"
-            app:layout_constraintStart_toStartOf="@+id/detail_categoryname"
-            app:layout_constraintTop_toBottomOf="@+id/detail_categoryname" />
-
-        <TextView
-            android:id="@+id/product_detail_brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Elders Company"
-            android:textSize="11dp"
-            app:layout_constraintStart_toStartOf="@+id/detail_brandname"
-            app:layout_constraintTop_toBottomOf="@+id/detail_brandname" />
-
-        <TextView
-            android:id="@+id/product_detail_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:fontFamily="@font/poppins"
-            android:text="Black"
-            android:textSize="11dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/detail_colorname"
-            app:layout_constraintTop_toBottomOf="@+id/detail_colorname"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/product_detail_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="S, M, L, XL"
-            android:textSize="11dp"
-            app:layout_constraintEnd_toEndOf="@+id/detail_sizename"
-            app:layout_constraintTop_toBottomOf="@+id/detail_sizename" />
-
-        <TextView
-            android:id="@+id/detail_colorname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="COLOR"
-            app:layout_constraintEnd_toEndOf="@+id/detail_sizename"
-            app:layout_constraintTop_toBottomOf="@+id/product_detail_size" />
-
-        <TextView
-            android:id="@+id/detail_sizename"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="92dp"
-            android:fontFamily="@font/poppins"
-            android:text="SIZE"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/detail_brandname" />
-
-        <TextView
-            android:id="@+id/detail_brandname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins"
-            android:text="BRAND"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/detail_categoryname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="CATEGORY"
-            app:layout_constraintStart_toStartOf="@+id/detail_brandname"
-            app:layout_constraintTop_toBottomOf="@+id/product_detail_brand" />
-
-        <TextView
-            android:id="@+id/detail_materialname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/poppins"
-            android:text="MATERIAL"
-            app:layout_constraintStart_toStartOf="@+id/detail_categoryname"
-            app:layout_constraintTop_toBottomOf="@+id/product_detail_category" />
-
-        <TextView
-            android:id="@+id/product_detail_material"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/poppins"
-            android:text="Cotton"
-            android:textSize="11dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/detail_materialname"
-            app:layout_constraintTop_toBottomOf="@+id/detail_materialname"
-            app:layout_constraintVertical_bias="0.0" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="177dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
-        app:layout_constraintVertical_bias="0.0">
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="16dp"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/detail_pricename"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <Button
             android:id="@+id/product_detail_buttonCart"
-            android:layout_width="163dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginBottom="9dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/button_rounded_detail"
             android:text="Add to Cart"
             android:textColor="#FFFFFF"
+            android:layout_marginRight="16dp"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"/>
+
     </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

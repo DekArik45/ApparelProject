@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_cart_cardView"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_riwayat_circleImageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/product1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/item_trx_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="07 Desember 2019"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/item_riwayat_circleImageView"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/item_trx_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Tag Heuer Wristwatch"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/item_riwayat_circleImageView"
+            app:layout_constraintTop_toBottomOf="@id/item_trx_tanggal"/>
+
+        <TextView
+            android:id="@+id/item_trx_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Rp 250.000"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/item_riwayat_circleImageView"
+            app:layout_constraintTop_toBottomOf="@id/item_trx_name"/>
+
+        <TextView
+            android:id="@+id/item_trx_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="8dp"
+            android:text="Belum Konfirmasi"
+            android:background="@color/harga"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/item_riwayat_circleImageView"
+            app:layout_constraintTop_toBottomOf="@id/item_trx_harga"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>
