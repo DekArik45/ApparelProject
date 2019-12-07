@@ -8,4 +8,33 @@
     <string name="search">Search</string>
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
+    <string-array name="Kategori">
+        <item>Tshirt</item>
+        <item>Jersey</item>
+        <item>Shirtt</item>
+        <item>Sweater</item>
+        <item>Pants</item>
+        <item>Coats</item>
+        <item>Cap</item>
+        <item>Undershirt</item>
+    </string-array>
+    <string-array name="Size">
+        <item>XS</item>
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+        <item>XXL</item>
+    </string-array>
+    <string-array name="Colour">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Grey</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Brown</item>
+    </string-array>
 </resources>

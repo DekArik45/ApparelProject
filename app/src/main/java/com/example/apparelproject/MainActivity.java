@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         mToolbar.setTitle(title);
                         break;
                 }
-                mToolbar.setTitleTextColor(Color.rgb(135,135,135));
+                mToolbar.setTitleTextColor(Color.rgb(255,255,255));
                 return replaceFragment(fragment);
             }
         });
