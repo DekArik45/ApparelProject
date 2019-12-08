@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListNewsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/news_item"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/image_list_news"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:src="@drawable/contoh"/>
+
+            <TextView
+                android:id="@+id/tittle_list_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:text="Simpan Kartu Debit Jenius dapat Voucher Rp 10rb"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/button1_list_news"
+                    android:text="EDIT"
+                    android:textColor="@color/colorSuccess"
+                    android:textSize="14sp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_shape_news"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/button2_list_news"
+                    android:text="EDIT"
+                    android:textColor="@color/colorSuccess"
+                    android:textSize="14sp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_shape_news"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

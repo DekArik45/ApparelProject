@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailNewsActivity"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/image_detail_news"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:src="@drawable/top_header2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tittle_detail_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sweater Abu Bagus Sekali Sangat bagus harus dibeli"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/news_item"
+        android:orientation="vertical"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/desc_detail_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="baju ini adaldahhfruua  dkfka kfjkadfj kdjkfdjfa  fjkdjfka kfjf dkfjkdjfa fkdfkajdf  kfdkfjdkfja fkajkdfjdkafj akfjdkfjkdafj fdfa fadfa kif asaua k irkafa kdfaoeom fldfiaf lfldifejel a ldif ladkfldofja ldfkldf aldkfldfoaj;a ;ldfkaoe ;a fldfdfaifal lfal kalfdk " />
+
+
+    </LinearLayout>
+
+</LinearLayout>
