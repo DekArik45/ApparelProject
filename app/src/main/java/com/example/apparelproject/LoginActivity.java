@@ -4,16 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apparelproject.constants.Fields;
-import com.example.apparelproject.data.ProfileData;
+import com.example.apparelproject.database.DatabaseHelper;
+import com.example.apparelproject.database.UserQuery;
 import com.example.apparelproject.model.UserModel;
+import com.example.apparelproject.utils.Config;
 
 import java.util.ArrayList;
 
@@ -36,15 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
-        mSharedPreferences = getSharedPreferences(Fields.PREFERENCE, Context.MODE_PRIVATE);
-        session = mSharedPreferences.getBoolean(Fields.SESSION_STATUS,false);
-        password1 = mSharedPreferences.getString(Fields.PASSWORD, null);
-        username1 = mSharedPreferences.getString(Fields.USERNAME, null);
+        mSharedPreferences = getSharedPreferences(Config.LOGIN, Context.MODE_PRIVATE);
+        session = mSharedPreferences.getBoolean(Config.SESSION,false);
 
         if (session) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.putExtra(Fields.PASSWORD, password1);
-            intent.putExtra(Fields.USERNAME, username1);
             startActivity(intent);
             finish();
         }
@@ -54,47 +53,44 @@ public class LoginActivity extends AppCompatActivity {
         mLogin =  findViewById(R.id.login_button);
         mRegister = (TextView)findViewById(R.id.login_toRegister);
 
-        this.setListUser(ProfileData.getListData());
-
-
-
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(validUserData()){
-                    for (int i=0; i<getListUser().size(); i++){
+                if (validUserData()) {
+                    UserQuery query = new UserQuery(getApplicationContext());
+                    UserModel currentUser = query.Authenticate(new UserModel(mUsername.getText().toString(), mUserpasswd.getText().toString()));
 
-                        if (getListUser().get(i).getUsername().equals(mUsername.getText().toString()) && getListUser().get(i).getPassword().equals(mUserpasswd.getText().toString())){
-                            cek = "true";
-                            Log.e("adf = ",getListUser().get(i).getUsername()+" "+mUsername.getText().toString());
+                    if (currentUser != null){
+                        Snackbar.make(mLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
 
-                            SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-                            mEditor.putString(Fields.NAME,getListUser().get(i).getNamaUser());
-                            mEditor.putString(Fields.PASSWORD,mUserpasswd.getText().toString());
-                            mEditor.putString(Fields.USERNAME,mUsername.getText().toString());
-                            mEditor.putString(Fields.EMAIL,getListUser().get(i).getEmailUser());
-                            mEditor.putString(Fields.FOTO,getListUser().get(i).getFotoUser());
-                            mEditor.putBoolean(Fields.SESSION_STATUS, true);
-                            mEditor.apply();
-
-                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+                        mEditor.putString(Config.COLUMN_USER_NAMA,currentUser.getNama());
+                        mEditor.putLong(Config.COLUMN_USER_ID,currentUser.getId());
+                        mEditor.putString(Config.COLUMN_USER_USERNAME,currentUser.getUsername());
+                        mEditor.putString(Config.COLUMN_USER_PASSWORD,currentUser.getPassword());
+                        if (currentUser.getImage() != null){
+                            mEditor.putString(Config.COLUMN_USER_IMAGE, Base64.encodeToString(currentUser.getImage(), Base64.DEFAULT));
                         }
-                    }
-                    if(username1 == mUsername.getText().toString() && password1 == mUserpasswd.getText().toString()){
-                        cek = "true";
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+
+                        mEditor.putString(Config.COLUMN_USER_JENISKELAMIN,currentUser.getJenis_kelamin());
+                        mEditor.putString(Config.COLUMN_USER_EMAIL,currentUser.getEmail());
+                        mEditor.putString(Config.COLUMN_USER_ALAMAT,currentUser.getAlamat());
+                        mEditor.putString(Config.COLUMN_USER_HAKAKSES,currentUser.getHak_akses());
+                        mEditor.putBoolean(Config.SESSION, true);
+                        mEditor.apply();
+
+                        //User Logged in Successfully Launch You home screen activity
+                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();
+                    } else {
+                        //User Logged in Failed
+                        Snackbar.make(mLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
                     }
-                    else if (cek.equals("false")){
-                        Toast.makeText(getApplicationContext(),"Username atau Password Salah",Toast.LENGTH_SHORT).show();
-                    }
-
-                }else {
-                    Toast.makeText(getApplicationContext(),"Data tidak boleh kosong",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Snackbar.make(mLogin, "Data Tidak Boleh Kosong", Snackbar.LENGTH_LONG).show();
                 }
             }
         });
@@ -112,14 +108,6 @@ public class LoginActivity extends AppCompatActivity {
         Name = mUsername.getText().toString().trim();
         Password = mUserpasswd.getText().toString().trim();
         return !(Name.isEmpty() || Password.isEmpty());
-    }
-
-    public ArrayList<UserModel> getListUser() {
-        return listUser;
-    }
-
-    public void setListUser(ArrayList<UserModel> listUser) {
-        this.listUser = listUser;
     }
 
     @Override

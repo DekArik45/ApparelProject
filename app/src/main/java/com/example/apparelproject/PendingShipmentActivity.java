@@ -10,15 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.apparelproject.adapter.ListTransactionAdapter;
-import com.example.apparelproject.data.TransactionData;
-import com.example.apparelproject.model.Transaction;
+import com.example.apparelproject.model.TransactionModel;
 
 import java.util.ArrayList;
 
 public class PendingShipmentActivity extends AppCompatActivity {
     RecyclerView mRecylcer;
-    private ArrayList<Transaction> list = new ArrayList<>();
-    private ArrayList<Transaction> listData = new ArrayList<>();
+    private ArrayList<TransactionModel> list = new ArrayList<>();
+    private ArrayList<TransactionModel> listData = new ArrayList<>();
 
     Toolbar mToolbar;
     @Override
@@ -33,25 +32,25 @@ public class PendingShipmentActivity extends AppCompatActivity {
 
     public void settingProductAll(){
 
-        this.setListData(TransactionData.getListData());
-
-        for (int i=0; i<getListData().size(); i++){
-            if (getListData().get(i).getKetSampai().equals("Belum dikirim") || getListData().get(i).getKetSampai().equals("Sedang pengiriman")) {
-                list.add(getListData().get(i));
-            }
-        }
-
-        mRecylcer.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
-        ListTransactionAdapter productAdapter = new ListTransactionAdapter(this, "Belum dikirim");
-        productAdapter.setListTransaction(list);
-        mRecylcer.setAdapter(productAdapter);
+//        this.setListData(TransactionData.getListData());
+//
+//        for (int i=0; i<getListData().size(); i++){
+//            if (getListData().get(i).getKetSampai().equals("Belum dikirim") || getListData().get(i).getKetSampai().equals("Sedang pengiriman")) {
+//                list.add(getListData().get(i));
+//            }
+//        }
+//
+//        mRecylcer.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
+//        ListTransactionAdapter productAdapter = new ListTransactionAdapter(this, "Belum dikirim");
+//        productAdapter.setListTransaction(list);
+//        mRecylcer.setAdapter(productAdapter);
     }
 
-    public ArrayList<Transaction> getListData() {
+    public ArrayList<TransactionModel> getListData() {
         return listData;
     }
 
-    public void setListData(ArrayList<Transaction> listData) {
+    public void setListData(ArrayList<TransactionModel> listData) {
         this.listData = listData;
     }
 

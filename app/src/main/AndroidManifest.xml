@@ -3,6 +3,8 @@
     package="com.example.apparelproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,12 +13,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ItemListProductActivity">
-
-        </activity>
-        <activity android:name=".RiwayatActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".UpdateStatusTransaksiActivity"></activity>
+        <activity
+            android:name=".TransaksiCustomerDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TransaksiAdminDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EditProductActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".NewsDetailActivity" />
+        <activity android:name=".NotLoginActivity" />
+        <activity
+            android:name=".TransaksiCustomerActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TransaksiAdminActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NewsActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ItemListProductActivity" />
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".RiwayatActivity" />
         <activity android:name=".CheckoutDataActivity" />
-        <activity android:name=".EditNewsActivity" />
+        <activity
+            android:name=".CreateNewsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EditNewsActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,14 +54,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateProdukActivity" />
+        <activity
+            android:name=".CreateProdukActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".ProductCategoryActivity" />
         <activity android:name=".FinishedOrderActivity" />
         <activity android:name=".PendingPaymentActivity" />
         <activity android:name=".PendingShipmentActivity" />
         <activity android:name=".OrderHistoryActivity" />
         <activity android:name=".CategoriesActivity" />
-        <activity android:name=".ProductActivity" />
+        <activity
+            android:name=".ProductActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ProductDetailActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

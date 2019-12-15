@@ -1,31 +1,47 @@
 package com.example.apparelproject.model;
 
+import java.sql.Blob;
+
 public class ProductModel {
 
-    private String nama, harga, kategori, deskripsi, ukuran, brand, bahan, warna, foto, status;
+    private long id;
+    private byte[] image;
+    private String nama;
+    private String deskripsi;
+    private String kategori;
+    private Integer harga;
+    private String warna;
+    private String ukuran;
 
     public ProductModel() {
+
     }
 
-    public ProductModel(String nama, String harga, String kategori, String deskripsi, String ukuran, String brand, String bahan, String warna, String foto, String status) {
+    public ProductModel(long id, byte[] image, String nama, String deskripsi, String kategori, Integer harga, String warna, String ukuran) {
+        this.id = id;
+        this.image = image;
         this.nama = nama;
-        this.harga = harga;
-        this.kategori = kategori;
         this.deskripsi = deskripsi;
-        this.ukuran = ukuran;
-        this.brand = brand;
-        this.bahan = bahan;
+        this.kategori = kategori;
+        this.harga = harga;
         this.warna = warna;
-        this.foto = foto;
-        this.status = status;
+        this.ukuran = ukuran;
     }
 
-    public String getStatus() {
-        return status;
+    public long getId() {
+        return id;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public String getNama() {
@@ -36,12 +52,12 @@ public class ProductModel {
         this.nama = nama;
     }
 
-    public String getHarga() {
-        return harga;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
     public String getKategori() {
@@ -52,36 +68,12 @@ public class ProductModel {
         this.kategori = kategori;
     }
 
-    public String getDeskripsi() {
-        return deskripsi;
+    public Integer getHarga() {
+        return harga;
     }
 
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
-    }
-
-    public String getUkuran() {
-        return ukuran;
-    }
-
-    public void setUkuran(String ukuran) {
-        this.ukuran = ukuran;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getBahan() {
-        return bahan;
-    }
-
-    public void setBahan(String bahan) {
-        this.bahan = bahan;
+    public void setHarga(Integer harga) {
+        this.harga = harga;
     }
 
     public String getWarna() {
@@ -92,12 +84,11 @@ public class ProductModel {
         this.warna = warna;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getUkuran() {
+        return ukuran;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setUkuran(String ukuran) {
+        this.ukuran = ukuran;
     }
-
 }

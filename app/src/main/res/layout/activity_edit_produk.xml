@@ -18,10 +18,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/colorPrimaryDark"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/edit_produk_viewFoto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/placeholder"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/edit_produk_btnFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_below="@id/register_viewFoto"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorSuccess"
+                    android:text="browse foto"
+                    android:textColor="@color/primary_light"
+                    android:textSize="10dp"
+                    android:layout_gravity="center"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -82,7 +107,7 @@
                     android:id="@+id/edit_produk_kategori"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/Kategori"
+                    android:entries="@array/kategori"
                     android:padding="20dp">
                 </Spinner>
 
@@ -106,7 +131,7 @@
                     android:textColor="@color/gray_darker"
                     android:ems="18"
                     android:hint="Harga"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -120,7 +145,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="25dp"
                         android:layout_marginLeft="25dp"
-                        android:entries="@array/Size"
+                        android:entries="@array/size"
                         android:padding="20dp">
                     </Spinner>
 
@@ -130,36 +155,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="25dp"
                         android:layout_marginRight="25dp"
-                        android:entries="@array/Colour"
+                        android:entries="@array/colour"
                         android:padding="20dp">
                     </Spinner>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/edit_produk_cancel"
-                        android:layout_width="150dp"
-                        android:layout_height="50dp"
-                        android:layout_above="@id/create_produk_harga"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="24sp"
-                        android:background="@drawable/button_rounded_white"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="24sp"
-                        android:text="Cancel" />
 
                     <Button
                         android:id="@+id/edit_produk_update"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="50dp"
-                        android:background="@drawable/button_rounded_white"
-                        android:layout_marginRight="10dp"
+                        android:background="@drawable/button_rounded_green"
+
                         android:layout_marginTop="24sp"
                         android:layout_marginBottom="24sp"
                         android:text="Update" />

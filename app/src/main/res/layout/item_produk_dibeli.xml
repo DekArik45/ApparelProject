@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    android:id="@+id/item_produk_dibeli">
+
+    <android.support.v7.widget.CardView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:id="@+id/item_produk_dibeli_cardview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="4dp"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp">
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/item_produk_dibeli_image"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/placeholder"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_produk_dibeli_nama"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:fontFamily="@font/poppins"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/item_produk_dibeli_image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="nama pengadu" />
+
+            <TextView
+                android:id="@+id/item_produk_dibeli_hargaJual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="TextView askfh kash "
+                android:textAlignment="textStart"
+                android:textColor="#000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/item_produk_dibeli_nama" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/item_produk_dibeli_cardviewTambahKurang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="visible"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+
+
+                    <TextView
+                        android:id="@+id/item_produk_dibeli_jumlah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:includeFontPadding="false"
+                        android:minWidth="25dp"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorSuccess"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -26,6 +26,7 @@
         android:layout_height="match_parent"
         android:paddingBottom="24dp"
         android:paddingLeft="24dp"
+        android:scrollbars="none"
         android:paddingRight="24dp"
         android:paddingTop="24dp">
 

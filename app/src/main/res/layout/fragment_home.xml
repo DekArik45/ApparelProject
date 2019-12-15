@@ -24,9 +24,8 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins"
                 android:text="Categories"
-                android:textColor="@color/black_transparent"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,24 +61,11 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
                         android:background="@drawable/gradient"
                         android:padding="6dp"
                         android:src="@drawable/ic_jersey"
                         app:layout_constraintStart_toEndOf="@+id/home_category_tshirt"
                         app:layout_constraintTop_toTopOf="@+id/home_category_tshirt" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/home_category_shirt"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/gradient"
-                        android:padding="6dp"
-                        android:src="@drawable/ic_shirt"
-                        app:layout_constraintStart_toEndOf="@+id/home_category_jersey"
-                        app:layout_constraintTop_toTopOf="@+id/home_category_jersey" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/home_category_sweaters"
@@ -89,8 +75,8 @@
                         android:background="@drawable/gradient"
                         android:padding="6dp"
                         android:src="@drawable/ic_sweater"
-                        app:layout_constraintStart_toEndOf="@+id/home_category_shirt"
-                        app:layout_constraintTop_toTopOf="@+id/home_category_shirt" />
+                        app:layout_constraintStart_toEndOf="@+id/home_category_jersey"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/home_category_pants"
@@ -116,28 +102,15 @@
                         app:layout_constraintTop_toTopOf="@+id/home_category_pants" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/home_category_cap"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/gradient"
-                        android:padding="6dp"
-                        android:src="@drawable/ic_cap"
-                        app:layout_constraintStart_toEndOf="@+id/home_category_coats"
-                        app:layout_constraintTop_toTopOf="@+id/home_category_coats" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/home_category_undershirt"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginEnd="24dp"
                         android:background="@drawable/gradient"
                         android:padding="6dp"
                         android:src="@drawable/ic_undershirt"
-                        app:layout_constraintStart_toEndOf="@+id/home_category_cap"
-                        app:layout_constraintTop_toTopOf="@+id/home_category_cap" />
+                        app:layout_constraintStart_toEndOf="@+id/home_category_coats"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/textView3"
@@ -163,19 +136,6 @@
                         app:layout_constraintHorizontal_bias="0.50"
                         app:layout_constraintStart_toStartOf="@+id/home_category_jersey"
                         app:layout_constraintTop_toBottomOf="@+id/home_category_jersey" />
-
-                    <TextView
-                        android:id="@+id/textView102"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Shirt"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textSize="11sp"
-                        app:layout_constraintEnd_toEndOf="@+id/home_category_shirt"
-                        app:layout_constraintHorizontal_bias="0.50"
-                        app:layout_constraintStart_toStartOf="@+id/home_category_shirt"
-                        app:layout_constraintTop_toBottomOf="@+id/home_category_shirt" />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -215,19 +175,6 @@
                         app:layout_constraintTop_toBottomOf="@+id/home_category_coats" />
 
                     <TextView
-                        android:id="@+id/textView103"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Cap"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textSize="11sp"
-                        app:layout_constraintEnd_toEndOf="@+id/home_category_cap"
-                        app:layout_constraintHorizontal_bias="0.50"
-                        app:layout_constraintStart_toStartOf="@+id/home_category_cap"
-                        app:layout_constraintTop_toBottomOf="@+id/home_category_cap" />
-
-                    <TextView
                         android:id="@+id/textView101"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -250,12 +197,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/poppins"
-                android:text="Promo"
-                android:textColor="@color/black_transparent"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:text="News"
+                android:textColor="#000"
+                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 

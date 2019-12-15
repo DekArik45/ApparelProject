@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_scrollFlags="enterAlways"
-        app:title="" />
+        app:layout_scrollFlags="enterAlways" />
 
     <ScrollView
         android:id="@+id/scrollViewRecords"
@@ -74,29 +73,6 @@
                 android:textSize="12sp"/>
 
             <TextView
-                android:id="@+id/detail_brandname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:textSize="12sp"
-                android:text="BRAND"/>
-
-            <TextView
-                android:id="@+id/product_detail_brand"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text="Elders Company"
-                android:layout_marginTop="0dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:textSize="12sp"/>
-
-            <TextView
                 android:id="@+id/detail_colorname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -146,16 +122,16 @@
                 android:id="@+id/detail_materialname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="DESKRIPSI"
                 android:textSize="12sp"
-                android:text="MATERIAL" />
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/product_detail_material"
+                android:id="@+id/product_detail_deskripsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -212,6 +188,87 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/product_detail_cardViewJumlah"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/product_detail_buttonCart"
+            app:layout_constraintEnd_toEndOf="@+id/product_detail_buttonCart"
+            app:layout_constraintStart_toStartOf="@+id/product_detail_buttonCart"
+            app:layout_constraintTop_toTopOf="@+id/product_detail_buttonCart">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/produk_detail_plus"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:scrollbarSize="0dp"
+                    android:text="+"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSuccess"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/produk_detail_jumlah"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/produk_detail_jumlah"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:minWidth="25dp"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSuccess"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/produk_detail_plus"
+                    app:layout_constraintEnd_toStartOf="@+id/produk_detail_plus"
+                    app:layout_constraintStart_toEndOf="@+id/produk_detail_min"
+                    app:layout_constraintTop_toTopOf="@+id/produk_detail_plus" />
+
+                <TextView
+                    android:id="@+id/produk_detail_min"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="2dp"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="-80dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorSuccess"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/produk_detail_plus"
+                    app:layout_constraintEnd_toStartOf="@+id/produk_detail_jumlah"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/produk_detail_plus" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
     </android.support.constraint.ConstraintLayout>
 

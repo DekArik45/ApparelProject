@@ -2,10 +2,12 @@ package com.example.apparelproject.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +16,12 @@ import android.widget.FrameLayout;
 
 import com.example.apparelproject.ProductCategoryActivity;
 import com.example.apparelproject.R;
+import com.example.apparelproject.adapter.ItemNewsAdapter;
 import com.example.apparelproject.adapter.ItemProductMainAdapter;
-import com.example.apparelproject.constants.Fields;
-import com.example.apparelproject.data.ProductData;
+import com.example.apparelproject.database.NewsQuery;
+import com.example.apparelproject.model.NewsModel;
 import com.example.apparelproject.model.ProductModel;
+import com.example.apparelproject.utils.Config;
 
 import java.util.ArrayList;
 
@@ -47,7 +51,10 @@ public class HomeFragment extends Fragment {
     RecyclerView mRecyclerProduct;
     CircleImageView mTshirt, mCoats, mJersey, mUndershirt, mPants, mSweaters;
     FrameLayout rootView;
-    private ArrayList<ProductModel> list = new ArrayList<>();
+
+    private ArrayList<NewsModel> listNews = new ArrayList<>();
+    private NewsQuery newsQuery;
+    private ItemNewsAdapter itemNewsAdapter;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -95,8 +102,7 @@ public class HomeFragment extends Fragment {
         mRecyclerProduct = rootView.findViewById(R.id.home_recyclerview_product_favorite);
 
         settingCategory();
-
-        settingDataListFavorite();
+        settingDataListNews();
 
         return rootView;
 //        return inflater.inflate(R.layout.fragment_home, container, false);
@@ -107,7 +113,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.COATS);
+                i.putExtra("category", Config.COATS);
                 startActivity(i);
             }
         });
@@ -116,7 +122,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.JERSEY);
+                i.putExtra("category",Config.JERSEY);
                 startActivity(i);
             }
         });
@@ -125,7 +131,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.PANTS);
+                i.putExtra("category",Config.PANTS);
                 startActivity(i);
             }
         });
@@ -134,7 +140,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.SWEATERS);
+                i.putExtra("category",Config.SWEATERS);
                 startActivity(i);
             }
         });
@@ -143,7 +149,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.TSHIRT);
+                i.putExtra("category",Config.TSHIRT);
                 startActivity(i);
             }
         });
@@ -152,18 +158,21 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), ProductCategoryActivity.class);
-                i.putExtra("category",Fields.UNDERSHIRT);
+                i.putExtra("category",Config.UNDERSHIRT);
                 startActivity(i);
             }
         });
     }
 
-    public void settingDataListFavorite(){
-        list.addAll(ProductData.getListData());
-        mRecyclerProduct.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 1));
-        ItemProductMainAdapter productAdapter = new ItemProductMainAdapter(getContext());
-        productAdapter.setListProduct(list);
-        mRecyclerProduct.setAdapter(productAdapter);
+    public void settingDataListNews(){
+        listNews.clear();
+        newsQuery = new NewsQuery(getContext());
+        listNews.addAll(newsQuery.getAllNews());
+
+        mRecyclerProduct.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        itemNewsAdapter = new ItemNewsAdapter(getContext());
+        itemNewsAdapter.setListNews(listNews);
+        mRecyclerProduct.setAdapter(itemNewsAdapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

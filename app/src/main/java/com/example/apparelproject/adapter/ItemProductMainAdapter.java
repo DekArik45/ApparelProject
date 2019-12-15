@@ -16,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.apparelproject.ProductDetailActivity;
 import com.example.apparelproject.R;
 import com.example.apparelproject.model.ProductModel;
+import com.example.apparelproject.utils.Config;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class ItemProductMainAdapter extends RecyclerView.Adapter<ItemProductMain
         gridViewHolder.title.setText(getListProduct().get(position).getNama());
 //        gridViewHolder.price.setText(getListProduct().get(position).getHarga());
         Glide.with(context)
-                .load(getListProduct().get(position).getFoto())
+                .load(getListProduct().get(position).getImage())
                 .apply(new RequestOptions())
                 .into(gridViewHolder.imgPhoto);
 
@@ -49,14 +50,14 @@ public class ItemProductMainAdapter extends RecyclerView.Adapter<ItemProductMain
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context.getApplicationContext(), ProductDetailActivity.class);
-                i.putExtra("title",getListProduct().get(position).getNama());
-                i.putExtra("price",getListProduct().get(position).getHarga());
-                i.putExtra("image",getListProduct().get(position).getFoto());
-                i.putExtra("brand", getListProduct().get(position).getBrand());
-                i.putExtra("category", getListProduct().get(position).getKategori());
-                i.putExtra("size", getListProduct().get(position).getUkuran());
-                i.putExtra("color", getListProduct().get(position).getWarna());
-                i.putExtra("material", getListProduct().get(position).getBahan());
+                i.putExtra(Config.COLUMN_PRODUK_NAMA,getListProduct().get(position).getNama());
+                i.putExtra(Config.COLUMN_PRODUK_HARGA,getListProduct().get(position).getHarga().toString());
+                i.putExtra(Config.COLUMN_PRODUK_IMAGE,getListProduct().get(position).getImage());
+                i.putExtra(Config.COLUMN_PRODUK_ID,String.valueOf(getListProduct().get(position).getId()));
+                i.putExtra(Config.COLUMN_PRODUK_DESKRIPSI,getListProduct().get(position).getDeskripsi());
+                i.putExtra(Config.COLUMN_PRODUK_KATEGORI, getListProduct().get(position).getKategori());
+                i.putExtra(Config.COLUMN_PRODUK_UKURAN, getListProduct().get(position).getUkuran());
+                i.putExtra(Config.COLUMN_PRODUK_WARNA, getListProduct().get(position).getWarna());
                 context.startActivity(i);
             }
         });

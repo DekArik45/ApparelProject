@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<android.support.constraint.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,78 +8,204 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.ProfileFragment">
 
-    <android.support.constraint.ConstraintLayout
+    <ImageView
         android:id="@+id/layoutContainer"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/colorSuccess"
-        android:orientation="vertical" >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_foto"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/foto_profile"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+    </ImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_foto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/foto_profile"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutContainer"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutContainer">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRecords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="65dp" />
+
+                <TextView
+                    android:id="@+id/judul_nama_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="NAMA"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nama_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Adji Mochamad Nur"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/judul_user_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="USERNAME"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/user_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="adjimn"
+                    android:textSize="12sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Jenis Kelamin"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/jeniskelamin_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="adjimn"
+                    android:textSize="12sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Email"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/email_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="adjimn"
+                    android:textSize="12sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Alamat"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/alamat_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="adjimn"
+                    android:textSize="12sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Hak Akses"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hakakses_profil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="adjimn"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 
     </android.support.constraint.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayoutRecords"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/judul_nama_profil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="12sp"
-            android:text="NAMA" />
 
-        <TextView
-            android:id="@+id/nama_profil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Adji Mochamad Nur"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="12sp"/>
-
-        <TextView
-            android:id="@+id/judul_user_profil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="12sp"
-            android:text="USERNAME" />
-
-        <TextView
-            android:id="@+id/user_profil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="adjimn"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
-
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>

@@ -17,8 +17,9 @@ import android.widget.TextView;
 
 import com.example.apparelproject.R;
 import com.example.apparelproject.adapter.ProductCategoryAdapter;
-import com.example.apparelproject.data.ProductData;
+import com.example.apparelproject.database.ProductQuery;
 import com.example.apparelproject.model.ProductModel;
+
 
 import java.util.ArrayList;
 
@@ -46,6 +47,7 @@ public class SearchFragment extends Fragment {
     EditText search;
     FrameLayout rootView;
     RecyclerView mrecycler;
+    ProductQuery productQuery;
 
     private ArrayList<ProductModel> list = new ArrayList<>();
     private ArrayList<ProductModel> listData = new ArrayList<>();
@@ -89,7 +91,7 @@ public class SearchFragment extends Fragment {
 
         search = rootView.findViewById(R.id.search_editSearch);
         mrecycler = rootView.findViewById(R.id.search_recycler);
-
+        productQuery = new ProductQuery(getContext());
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -106,17 +108,10 @@ public class SearchFragment extends Fragment {
     }
 
     public void performSearch(){
-        this.setListData(ProductData.getListData());
-
-        for (int i=0; i<getListData().size(); i++){
-            if (search.getText().toString().equals(getListData().get(i).getKategori()) || search.getText().toString().equals(getListData().get(i).getNama()) || search.getText().toString().equals(getListData().get(i).getBrand())){
-                list.add(getListData().get(i));
-            }
-        }
-
+        list.addAll(productQuery.getProductSearch(search.getText().toString()));
+//
         mrecycler.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        ProductCategoryAdapter productAdapter = new ProductCategoryAdapter(getContext(),"0", "search");
-
+        ProductCategoryAdapter productAdapter = new ProductCategoryAdapter(getContext());
         productAdapter.setListProduct(list);
         mrecycler.setAdapter(productAdapter);
     }

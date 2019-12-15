@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.apparelproject.R;
-import com.example.apparelproject.model.Transaction;
+import com.example.apparelproject.model.TransactionModel;
 
 import java.util.ArrayList;
 
@@ -21,13 +21,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ListTransactionAdapter extends RecyclerView.Adapter<ListTransactionAdapter.CategoryViewHolder> {
     private Context context;
     private String status;
-    private ArrayList<Transaction> listTransaction;
+    private ArrayList<TransactionModel> listTransaction;
 
-    public ArrayList<Transaction> getListTransaction() {
+    public ArrayList<TransactionModel> getListTransaction() {
         return listTransaction;
     }
 
-    public void setListTransaction(ArrayList<Transaction> listTransaction) {
+    public void setListTransaction(ArrayList<TransactionModel> listTransaction) {
         this.listTransaction = listTransaction;
     }
 
@@ -48,20 +48,20 @@ public class ListTransactionAdapter extends RecyclerView.Adapter<ListTransaction
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
 
 
-        categoryViewHolder.tvNama.setText(getListTransaction().get(position).getNama());
-        categoryViewHolder.tvWarna.setText(getListTransaction().get(position).getWarna());
-        categoryViewHolder.tvAsalProduct.setText(getListTransaction().get(position).getAsalProduct());
-        categoryViewHolder.tvTanggalTransaksi.setText(getListTransaction().get(position).getTanggalTransaksi());
-        categoryViewHolder.tvKetSampai.setText(getListTransaction().get(position).getKetSampai());
-
-        categoryViewHolder.tvUkuran.setText(getListTransaction().get(position).getUkuran());
-        categoryViewHolder.tvJumlah.setText(getListTransaction().get(position).getJumlah());
-        categoryViewHolder.tvHarga.setText(getListTransaction().get(position).getHarga());
-        categoryViewHolder.tvTotalHarga.setText(getListTransaction().get(position).getTotalHarga());
-        Glide.with(context)
-                .load(getListTransaction().get(position).getGambar())
-                .apply(new RequestOptions().override(55, 55))
-                .into(categoryViewHolder.imgGambar);
+//        categoryViewHolder.tvNama.setText(getListTransaction().get(position).getnam());
+//        categoryViewHolder.tvWarna.setText(getListTransaction().get(position).getWarna());
+//        categoryViewHolder.tvAsalProduct.setText(getListTransaction().get(position).getAsalProduct());
+//        categoryViewHolder.tvTanggalTransaksi.setText(getListTransaction().get(position).getTanggalTransaksi());
+//        categoryViewHolder.tvKetSampai.setText(getListTransaction().get(position).getKetSampai());
+//
+//        categoryViewHolder.tvUkuran.setText(getListTransaction().get(position).getUkuran());
+//        categoryViewHolder.tvJumlah.setText(getListTransaction().get(position).getJumlah());
+//        categoryViewHolder.tvHarga.setText(getListTransaction().get(position).getHarga());
+//        categoryViewHolder.tvTotalHarga.setText(getListTransaction().get(position).getTotalHarga());
+//        Glide.with(context)
+//                .load(getListTransaction().get(position).getGambar())
+//                .apply(new RequestOptions().override(55, 55))
+//                .into(categoryViewHolder.imgGambar);
 
 
 

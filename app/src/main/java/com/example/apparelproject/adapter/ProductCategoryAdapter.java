@@ -2,6 +2,7 @@ package com.example.apparelproject.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.apparelproject.ProductDetailActivity;
 import com.example.apparelproject.R;
 import com.example.apparelproject.model.ProductModel;
+import com.example.apparelproject.utils.Config;
+import com.example.apparelproject.utils.DbBitmapUtility;
 
 import java.util.ArrayList;
 
@@ -35,80 +38,38 @@ public class ProductCategoryAdapter extends RecyclerView.Adapter<ProductCategory
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
+        String harga = getListProduct().get(position).getHarga().toString();
+            categoryViewHolder.title.setText(getListProduct().get(position).getNama());
+            categoryViewHolder.price.setText(harga);
 
-        if (this.status.equals("1")){
-            if (getListProduct().get(position).getKategori().equals(this.category)){
-                if (getListProduct().get(position).getStatus().equals("1")){
-                    categoryViewHolder.title.setText(getListProduct().get(position).getNama());
-                    categoryViewHolder.price.setText(getListProduct().get(position).getHarga());
-                    Glide.with(context)
-                            .load(getListProduct().get(position).getFoto())
-                            .apply(new RequestOptions())
-                            .into(categoryViewHolder.imgPhoto);
+        Bitmap imageBitmap = DbBitmapUtility.getImage(getListProduct().get(position).getImage());
+            Glide.with(context)
+                    .load(imageBitmap)
+                    .apply(new RequestOptions())
+                    .into(categoryViewHolder.imgPhoto);
 
-                    categoryViewHolder.mCard.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(context.getApplicationContext(), ProductDetailActivity.class);
-                            i.putExtra("title",getListProduct().get(position).getNama());
-                            i.putExtra("price",getListProduct().get(position).getHarga());
-                            i.putExtra("image",getListProduct().get(position).getFoto());
-                            i.putExtra("brand", getListProduct().get(position).getBrand());
-                            i.putExtra("category", getListProduct().get(position).getKategori());
-                            i.putExtra("size", getListProduct().get(position).getUkuran());
-                            i.putExtra("color", getListProduct().get(position).getWarna());
-                            i.putExtra("material", getListProduct().get(position).getBahan());
-                            context.startActivity(i);
-                        }
-                    });
+            categoryViewHolder.mCard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(context, ProductDetailActivity.class);
+                    i.putExtra(Config.COLUMN_PRODUK_NAMA,getListProduct().get(position).getNama());
+                    i.putExtra(Config.COLUMN_PRODUK_HARGA,getListProduct().get(position).getHarga().toString());
+                    i.putExtra(Config.COLUMN_PRODUK_IMAGE,getListProduct().get(position).getImage());
+                    i.putExtra(Config.COLUMN_PRODUK_ID,String.valueOf(getListProduct().get(position).getId()));
+                    i.putExtra(Config.COLUMN_PRODUK_DESKRIPSI,getListProduct().get(position).getDeskripsi());
+                    i.putExtra(Config.COLUMN_PRODUK_KATEGORI, getListProduct().get(position).getKategori());
+                    i.putExtra(Config.COLUMN_PRODUK_UKURAN, getListProduct().get(position).getUkuran());
+                    i.putExtra(Config.COLUMN_PRODUK_WARNA, getListProduct().get(position).getWarna());
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(i);
                 }
-                else{
-                    categoryViewHolder.mCard.setVisibility(View.GONE);
-                }
-            }
-            else{
-                categoryViewHolder.mCard.setVisibility(View.GONE);
-            }
-        }
-        else{
-//            if (getListProduct().get(position).getKategori().equals(this.category)){
-                categoryViewHolder.title.setText(getListProduct().get(position).getNama());
-                categoryViewHolder.price.setText(getListProduct().get(position).getHarga());
-                Glide.with(context)
-                        .load(getListProduct().get(position).getFoto())
-                        .apply(new RequestOptions())
-                        .into(categoryViewHolder.imgPhoto);
-
-                categoryViewHolder.mCard.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(context.getApplicationContext(), ProductDetailActivity.class);
-                        i.putExtra("title",getListProduct().get(position).getNama());
-                        i.putExtra("price",getListProduct().get(position).getHarga());
-                        i.putExtra("image",getListProduct().get(position).getFoto());
-                        i.putExtra("brand", getListProduct().get(position).getBrand());
-                        i.putExtra("category", getListProduct().get(position).getKategori());
-                        i.putExtra("size", getListProduct().get(position).getUkuran());
-                        i.putExtra("color", getListProduct().get(position).getWarna());
-                        i.putExtra("material", getListProduct().get(position).getBahan());
-                        context.startActivity(i);
-                    }
-                });
-//            }
-//            else{
-//                categoryViewHolder.mCard.setVisibility(View.GONE);
-//            }
-        }
-
-
+            });
 
     }
 
 
-    public ProductCategoryAdapter(Context context, String status, String category) {
+    public ProductCategoryAdapter(Context context) {
         this.context = context;
-        this.status = status;
-        this.category = category;
     }
 
     @Override

@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:paddingBottom="24dp"
         android:paddingLeft="24dp"
+        android:scrollbars="none"
         android:paddingRight="24dp"
         android:paddingTop="24dp">
 
@@ -115,7 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="Password"
                         android:textColor="@color/black_transparent"
@@ -143,7 +144,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="Nama"
                         android:textColor="@color/black_transparent"
@@ -165,6 +166,141 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvRegisNama" />
 
+                    <TextView
+                        android:id="@+id/tvRegisJenisKelamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Jenis Kelamin"
+                        android:textColor="@color/black_transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/register_alamat" />
+
+                    <RadioGroup
+                        android:id="@+id/register_jeniskelamin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegisJenisKelamin">
+
+                        <RadioButton
+                            android:id="@+id/register_laki"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Laki-Laki" />
+
+                        <RadioButton
+                            android:id="@+id/register_perempuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Perempuan" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/tvRegisEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Email"
+                        android:textColor="@color/black_transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/register_nama" />
+
+                    <EditText
+                        android:id="@+id/register_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:ems="10"
+                        android:hint="Masukkan Nama"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/colorUnderlineDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegisEmail" />
+
+                    <TextView
+                        android:id="@+id/tvRegisAlamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Alamat"
+                        android:textColor="@color/black_transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/register_email" />
+
+                    <EditText
+                        android:id="@+id/register_alamat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:ems="10"
+                        android:hint="Masukkan Nama"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/colorUnderlineDivider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegisAlamat" />
+
+                    <TextView
+                        android:id="@+id/tvRegisHakAkses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Hak Akses"
+                        android:textColor="@color/black_transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/register_jeniskelamin" />
+
+                    <RadioGroup
+                        android:id="@+id/register_hakAkses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegisHakAkses">
+
+                        <RadioButton
+                            android:id="@+id/register_admin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Admin" />
+
+                        <RadioButton
+                            android:id="@+id/register_customer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer" />
+                    </RadioGroup>
+
                     <mehdi.sakout.fancybuttons.FancyButton
                         android:id="@+id/register_button"
                         style="@style/Widget.AppCompat.Button.Borderless"
@@ -172,13 +308,14 @@
                         android:layout_height="@dimen/big_button_height"
                         android:layout_gravity="center"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="32dp"
                         android:layout_marginEnd="8dp"
                         android:padding="8dp"
                         android:textSize="@dimen/big_button_fontSize"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/register_nama"
+                        app:layout_constraintTop_toBottomOf="@+id/register_hakAkses"
                         fancy:fb_defaultColor="@color/colorSuccess"
                         fancy:fb_fontIconResource="\uf0a9"
                         fancy:fb_iconPosition="left"
@@ -202,8 +339,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:layout_marginTop="24dp"
+                        android:layout_marginBottom="10dp"
                         android:text="© 2019 Apparel Team"
                         android:textColor="@color/black_transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.558"
                         app:layout_constraintStart_toStartOf="parent"

@@ -17,7 +17,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.apparelproject.adapter.ProductCategoryAdapter;
-import com.example.apparelproject.data.ProductData;
+import com.example.apparelproject.database.ProductQuery;
 import com.example.apparelproject.model.ProductModel;
 
 import java.util.ArrayList;
@@ -34,9 +34,9 @@ public class ProductCategoryActivity extends AppCompatActivity {
     Cursor mCursor;
 
     RecyclerView mProductPopular, mProduct;
-    private ArrayList<ProductModel> listPopular = new ArrayList<>();
     private ArrayList<ProductModel> list = new ArrayList<>();
-    private ArrayList<ProductModel> listAll = new ArrayList<>();
+    ProductQuery productQuery;
+    ProductCategoryAdapter productCategoryAdapter;
 
     String category;
 
@@ -48,48 +48,24 @@ public class ProductCategoryActivity extends AppCompatActivity {
         Intent data = getIntent();
 
         category = data.getStringExtra("category");
-
+        productQuery = new ProductQuery(this);
         inisialisasiToolbar();
 
         mProduct = findViewById(R.id.product_category_recyclerProduct);
-        mProductPopular = findViewById(R.id.product_category_recyclerPopularProduct);
         mHeader = findViewById(R.id.product_category_txtHeader);
 
         mHeader.setText(category);
-
-        settingProductPopular();
         settingProductAll();
 
     }
 
-    public void settingProductPopular(){
-        listPopular.addAll(ProductData.getListData());
-        mProductPopular.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-        ProductCategoryAdapter productAdapter = new ProductCategoryAdapter(this, "1", category);
-
-//        for(mCursor.moveToFirst(); !mCursor.isAfterLast(); mCursor.moveToNext()) {
-//            // The Cursor is now set to the right position
-//            mArrayList.add(mCursor.getWhateverTypeYouWant(WHATEVER_COLUMN_INDEX_YOU_WANT));
-//        }
-
-        productAdapter.setListProduct(listPopular);
-        mProductPopular.setAdapter(productAdapter);
-    }
 
     public void settingProductAll(){
-        this.setList(ProductData.getListData());
-
-        Log.e("list = ",String.valueOf(getList().size()));
-        for (int i=0; i<getList().size(); i++){
-            if (category.equals(getList().get(i).getKategori())){
-                listAll.add(getList().get(i));
-            }
-        }
-//        list.addAll(ProductData.getListData());
+        list.addAll(productQuery.getProductCategory(category));
         mProduct.setLayoutManager(new GridLayoutManager(this, 3));
-        ProductCategoryAdapter productAdapter = new ProductCategoryAdapter(this, "0", category);
-        productAdapter.setListProduct(listAll);
-        mProduct.setAdapter(productAdapter);
+        productCategoryAdapter = new ProductCategoryAdapter(getApplicationContext());
+        productCategoryAdapter.setListProduct(list);
+        mProduct.setAdapter(productCategoryAdapter);
     }
 
     private void inisialisasiToolbar(){
@@ -102,7 +78,7 @@ public class ProductCategoryActivity extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+            Drawable upArrow = getApplicationContext().getDrawable(R.drawable.abc_ic_ab_back_material);
             upArrow.setColorFilter(Color.argb(255,255,255,255), PorterDuff.Mode.SRC_ATOP);
             getSupportActionBar().setHomeAsUpIndicator(upArrow);
         }

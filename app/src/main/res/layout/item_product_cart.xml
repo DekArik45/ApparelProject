@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_cart_cardView"
@@ -53,18 +55,20 @@
             android:gravity="center"
             android:padding="0dp"
             android:text="-"
+            android:textColor="@color/colorSuccess"
             app:layout_constraintBottom_toBottomOf="@+id/item_cart_circleImageView"
             app:layout_constraintEnd_toStartOf="@+id/item_cart_qty"
             app:layout_constraintStart_toStartOf="@+id/item_cart_product_price" />
 
         <Button
-            android:id="@+id/cart_btnPlus"
+            android:id="@+id/item_cart_btnPlus"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="4dp"
             android:gravity="center"
             android:padding="0dp"
             android:text="+"
+            android:textColor="@color/colorSuccess"
             app:layout_constraintBottom_toBottomOf="@+id/item_cart_btnMin"
             app:layout_constraintStart_toEndOf="@+id/item_cart_qty"
             app:layout_constraintTop_toTopOf="@+id/item_cart_btnMin" />
@@ -76,10 +80,10 @@
             android:layout_marginStart="4dp"
             android:fontFamily="@font/poppins"
             android:text="1"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/colorSuccess"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/item_cart_btnMin"
-            app:layout_constraintEnd_toStartOf="@+id/cart_btnPlus"
+            app:layout_constraintEnd_toStartOf="@+id/item_cart_btnPlus"
             app:layout_constraintStart_toEndOf="@+id/item_cart_btnMin"
             app:layout_constraintTop_toTopOf="@+id/item_cart_btnMin" />
 
@@ -91,6 +95,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/product_cart_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="Rp. 1000"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorSuccess"
+            app:layout_constraintBottom_toBottomOf="@+id/item_cart_btnPlus"
+            app:layout_constraintEnd_toEndOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
 

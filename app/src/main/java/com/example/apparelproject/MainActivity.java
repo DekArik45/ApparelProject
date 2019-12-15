@@ -16,10 +16,17 @@ import android.view.MenuItem;
 
 import com.example.apparelproject.Fragment.CartFragment;
 import com.example.apparelproject.Fragment.HomeFragment;
+import com.example.apparelproject.Fragment.NotLoginFragment;
 import com.example.apparelproject.Fragment.ProfileFragment;
 import com.example.apparelproject.Fragment.SearchFragment;
-import com.example.apparelproject.constants.Fields;
+import com.example.apparelproject.utils.Config;
 import com.example.apparelproject.utils.DrawerMenu;
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,19 +41,20 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            Stetho.initializeWithDefaults(this);
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .readTimeout(60, TimeUnit.SECONDS)
+                    .connectTimeout(60, TimeUnit.SECONDS)
+                    .addNetworkInterceptor(new StethoInterceptor())
+                    .build();
 
             initDrawerMenu();
             replaceFragment(new HomeFragment());
             initBottomBar();
 
-            sharedpreferences = this.getSharedPreferences(Fields.PREFERENCE, Context.MODE_PRIVATE);
+            sharedpreferences = this.getSharedPreferences(Config.LOGIN, Context.MODE_PRIVATE);
+            session = sharedpreferences.getBoolean(Config.SESSION, false);
 
-            session = sharedpreferences.getBoolean(Fields.SESSION_STATUS, false);
-
-//        SharedPreferences msharedpreferences = this.getSharedPreferences(Fields.PRODUCT_PREFERENCE, Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = msharedpreferences.edit();
-//        editor.clear();
-//        editor.apply();
     }
 
     private void initBottomBar(){
@@ -71,16 +79,32 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.navigation_cart:
-                        fragment = new CartFragment();
-                        title = "Cart";
-                        mToolbar.setTitle(title);
-                        break;
+                        if (session){
+                            fragment = new CartFragment();
+                            title = "Cart";
+                            mToolbar.setTitle(title);
+                            break;
+                        }
+                        else{
+                            fragment = new NotLoginFragment();
+                            title = "Not Login";
+                            mToolbar.setTitle(title);
+                            break;
+                        }
 
                     case R.id.navigation_profile:
-                        fragment = new ProfileFragment();
-                        title = "Profile";
-                        mToolbar.setTitle(title);
-                        break;
+                        if (session){
+                            fragment = new ProfileFragment();
+                            title = "Profile";
+                            mToolbar.setTitle(title);
+                            break;
+                        }
+                        else{
+                            fragment = new NotLoginFragment();
+                            title = "Not Login";
+                            mToolbar.setTitle(title);
+                            break;
+                        }
                 }
                 mToolbar.setTitleTextColor(Color.rgb(255,255,255));
                 return replaceFragment(fragment);
@@ -112,7 +136,9 @@ public class MainActivity extends AppCompatActivity {
 //
         DrawerMenu drawer = new DrawerMenu();
         drawer.createDrawer(this, this, mToolbar);
-        mToolbar.setTitleTextColor(Color.rgb(135,135,135));
+        mToolbar.setTitle("Home");
+        mToolbar.setTitleTextColor(Color.rgb(255,255,255));
+
     }
 
     //langsung keluar

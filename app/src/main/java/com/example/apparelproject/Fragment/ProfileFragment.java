@@ -3,9 +3,12 @@ package com.example.apparelproject.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +23,8 @@ import com.example.apparelproject.LoginActivity;
 import com.example.apparelproject.PendingPaymentActivity;
 import com.example.apparelproject.PendingShipmentActivity;
 import com.example.apparelproject.R;
-import com.example.apparelproject.constants.Fields;
+import com.example.apparelproject.utils.Config;
+import com.example.apparelproject.utils.DbBitmapUtility;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -44,11 +48,12 @@ public class ProfileFragment extends Fragment {
 
     Button btnPendingShipment,btnPendingPayment, btnFinished;
     CircleImageView profileImage;
-    FrameLayout rootView;
+    ConstraintLayout rootView;
     SharedPreferences sharedpreferences;
     Boolean session;
-    String nama, email, foto, username, password;
-    TextView profileNama, profileEmail;
+    String nama, email, alamat, username, password, hak_akses, jenis_kelamin;
+    TextView profileNama, profileEmail, mAlamat, mUsername, mJenisKelamin, mHakAkses;
+    Bitmap fotoBitmap;
 
     private OnFragmentInteractionListener mListener;
 
@@ -87,58 +92,46 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = (FrameLayout) inflater.inflate(R.layout.fragment_profile, container, false);
+        rootView = (ConstraintLayout) inflater.inflate(R.layout.fragment_profile, container, false);
 //        btnPendingShipment = rootView.findViewById(R.id.profile_pending_shipment);
 //        btnPendingPayment = rootView.findViewById(R.id.profile_pending_payment);
 //        btnFinished = rootView.findViewById(R.id.profile_finished_order);
 
-        sharedpreferences = getActivity().getApplicationContext().getSharedPreferences(Fields.PREFERENCE, Context.MODE_PRIVATE);
-        session = sharedpreferences.getBoolean(Fields.SESSION_STATUS, false);
+        sharedpreferences = getActivity().getApplicationContext().getSharedPreferences(Config.LOGIN, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(Config.SESSION, false);
 
-        if (!session) {
-            Intent intent = new Intent(getContext(), LoginActivity.class);
-            startActivity(intent);
-        }
+        nama = sharedpreferences.getString(Config.COLUMN_USER_NAMA, null);
+        email = sharedpreferences.getString(Config.COLUMN_USER_EMAIL, null);
+        username = sharedpreferences.getString(Config.COLUMN_USER_USERNAME, null);
+        password = sharedpreferences.getString(Config.COLUMN_USER_PASSWORD, null);
+        jenis_kelamin = sharedpreferences.getString(Config.COLUMN_USER_JENISKELAMIN, null);
+        alamat = sharedpreferences.getString(Config.COLUMN_USER_ALAMAT, null);
+        hak_akses = sharedpreferences.getString(Config.COLUMN_USER_HAKAKSES, null);
 
-        nama = sharedpreferences.getString(Fields.NAME, null);
-        email = sharedpreferences.getString(Fields.EMAIL, null);
-        foto = sharedpreferences.getString(Fields.FOTO, null);
-        username = sharedpreferences.getString(Fields.USERNAME, null);
-        password = sharedpreferences.getString(Fields.PASSWORD, null);
-
-//        profileEmail = rootView.findViewById(R.id.profile_email);
-//        profileNama = rootView.findViewById(R.id.profile_nama);
+        byte[] fotoByte = Base64.decode(sharedpreferences.getString(Config.COLUMN_USER_IMAGE,null),Base64.DEFAULT);
+        fotoBitmap = DbBitmapUtility.getImage(fotoByte);
         profileImage = rootView.findViewById(R.id.profile_foto);
+
+        profileNama = rootView.findViewById(R.id.nama_profil);
+        profileEmail = rootView.findViewById(R.id.email_profil);
+        mAlamat = rootView.findViewById(R.id.alamat_profil);
+        mJenisKelamin = rootView.findViewById(R.id.jeniskelamin_profil);
+        mHakAkses = rootView.findViewById(R.id.hakakses_profil);
+        mUsername = rootView.findViewById(R.id.user_profil);
 
         profileNama.setText(nama);
         profileEmail.setText(email);
+        mAlamat.setText(alamat);
+        mJenisKelamin.setText(jenis_kelamin);
+        mUsername.setText(username);
+        mHakAkses.setText(hak_akses);
 
         Glide.with(getContext())
-                .load(foto)
+                .load(fotoBitmap)
                 .apply(new RequestOptions())
                 .into(profileImage);
 
-        btnPendingPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), PendingPaymentActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnPendingShipment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), PendingShipmentActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnFinished.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), FinishedOrderActivity.class);
-                startActivity(intent);
-            }
-        });
+
         return rootView;
 //        return inflater.inflate(R.layout.fragment_profile, container, false);
     }

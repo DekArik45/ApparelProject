@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.apparelproject.model.Transaction;
+import com.example.apparelproject.model.TransactionModel;
 
 import java.util.ArrayList;
 
 public class OrderHistoryActivity extends AppCompatActivity {
 
     RecyclerView mRecylcer;
-    private ArrayList<Transaction> list = new ArrayList<>();
+    private ArrayList<TransactionModel> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
