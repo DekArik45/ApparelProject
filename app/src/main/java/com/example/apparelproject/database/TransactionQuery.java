@@ -145,7 +145,7 @@ public class TransactionQuery {
         Cursor cursor = null;
         try {
 
-            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where nama_user = ? and status = ? or status = ? group by tanggal",new String[]{nama_user,Config.STATUS_TRX_SELESAI,Config.STATUS_TRX_DITOLAK});
+            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga*jumlah) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where nama_user = ? and status = ? or status = ? group by tanggal",new String[]{nama_user,Config.STATUS_TRX_SELESAI,Config.STATUS_TRX_DITOLAK});
 
             if(cursor!=null)
                 if(cursor.moveToFirst()){
@@ -187,7 +187,7 @@ public class TransactionQuery {
         Cursor cursor = null;
         try {
 
-            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where nama_user = ? and status != ? and status != ? and status != ? group by tanggal",new String[]{nama_user,Config.STATUS_TRX_CART,Config.STATUS_TRX_SELESAI,Config.STATUS_TRX_DITOLAK});
+            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga*jumlah) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where nama_user = ? and status != ? and status != ? and status != ? group by tanggal",new String[]{nama_user,Config.STATUS_TRX_CART,Config.STATUS_TRX_SELESAI,Config.STATUS_TRX_DITOLAK});
 
             if(cursor!=null)
                 if(cursor.moveToFirst()){
@@ -229,7 +229,7 @@ public class TransactionQuery {
         Cursor cursor = null;
         try {
 
-            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where status != ? and status != ?  and status != ? group by tanggal",new String[]{Config.STATUS_TRX_CART,Config.STATUS_TRX_DITOLAK,Config.STATUS_TRX_SELESAI});
+            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga*jumlah) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where status != ? and status != ?  and status != ? group by tanggal",new String[]{Config.STATUS_TRX_CART,Config.STATUS_TRX_DITOLAK,Config.STATUS_TRX_SELESAI});
 
             if(cursor!=null)
                 if(cursor.moveToFirst()){
@@ -270,7 +270,7 @@ public class TransactionQuery {
         Cursor cursor = null;
         try {
 
-            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where status = ? or status = ? group by tanggal",new String[]{Config.STATUS_TRX_DITOLAK,Config.STATUS_TRX_SELESAI});
+            cursor = sqLiteDatabase.rawQuery("select _id,nama_user,image_produk,nama_produk,SUM(harga*jumlah) as harga, SUM(jumlah) as jumlah, tanggal, status, bukti_pembayaran from tb_transaksi where status = ? or status = ? group by tanggal",new String[]{Config.STATUS_TRX_DITOLAK,Config.STATUS_TRX_SELESAI});
 
             if(cursor!=null)
                 if(cursor.moveToFirst()){

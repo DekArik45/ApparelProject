@@ -92,6 +92,13 @@ public class CartFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        settingRecycler();
+        super.onResume();
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -133,10 +140,12 @@ public class CartFragment extends Fragment {
 
             Toast.makeText(getContext(), "Check Out Success", Toast.LENGTH_LONG).show();
             if (hakAkses.equals("Admin")){
+                list.clear();
                 Intent intent = new Intent(getContext(), TransaksiAdminActivity.class);
                 startActivity(intent);
             }
             else {
+                list.clear();
                 Intent intent = new Intent(getContext(), TransaksiCustomerActivity.class);
                 startActivity(intent);
             }
@@ -176,6 +185,9 @@ public class CartFragment extends Fragment {
             @Override
             public void onAdd(int position, int harga) {
                 grandTotal += harga;
+                int jumlah = list.get(position).getJumlah();
+                jumlah += 1;
+                list.get(position).setJumlah(jumlah);
                 itemProductCartAdapter.setTotal(grandTotal);
 
                 grandTotal = itemProductCartAdapter.getTotal();
@@ -187,7 +199,9 @@ public class CartFragment extends Fragment {
         itemProductCartAdapter.setOnMinListener(new ItemProductCartAdapter.OnMinListener() {
             @Override
             public void onMin(int position, int harga, int jumlah) {
-
+                int kurang = list.get(position).getJumlah();
+                kurang -= 1;
+                list.get(position).setJumlah(kurang);
                 grandTotal -= harga;
                 itemProductCartAdapter.setTotal(grandTotal);
 

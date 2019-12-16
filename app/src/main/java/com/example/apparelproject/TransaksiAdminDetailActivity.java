@@ -75,10 +75,10 @@ public class TransaksiAdminDetailActivity extends AppCompatActivity {
                     .apply(new RequestOptions())
                     .into(buktiPembayaran);
         }
-        int total = Integer.parseInt(harga) * Integer.parseInt(jumlah);
+//        int total = Integer.parseInt(harga) * Integer.parseInt(jumlah);
         mNamaUser.setText(namaUser);
         mJumlah.setText(jumlah);
-        mTotal.setText("Rp."+String.valueOf(total));
+        mTotal.setText("Rp."+String.valueOf(harga));
         if (status.equals(Config.STATUS_TRX_DITOLAK)){
             mStatus.setTextColor(getColor(R.color.md_red_500));
         }

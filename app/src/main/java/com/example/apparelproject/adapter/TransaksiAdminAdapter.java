@@ -77,9 +77,10 @@ public class TransaksiAdminAdapter extends RecyclerView.Adapter<TransaksiAdminAd
 
 
         gridViewHolder.mNamaUser.setText(getList().get(position).getNama_user());
-        int total = getList().get(position).getJumlah() * getList().get(position).getHarga();
-        gridViewHolder.mTotalBelanja.setText("Rp."+String.valueOf(total));
+//        int total = getList().get(position).getJumlah() * getList().get(position).getHarga();
+        gridViewHolder.mTotalBelanja.setText("Rp."+String.valueOf(getList().get(position).getHarga()));
         gridViewHolder.mStatus.setText(getList().get(position).getStatus());
+
         if (getList().get(position).getStatus().equals(Config.STATUS_TRX_DITOLAK)){
             gridViewHolder.mStatus.setTextColor(context.getColor(R.color.md_red_500));
         }

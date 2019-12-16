@@ -40,13 +40,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:maxLines="2"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:visibility="visible"
                 app:fontFamily="@font/poppins"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/item_produk_dibeli_cardviewTambahKurang"
                 app:layout_constraintStart_toEndOf="@+id/item_produk_dibeli_image"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="nama pengadu" />
@@ -68,12 +68,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:layout_marginBottom="8dp"
                 android:visibility="visible"
                 app:cardCornerRadius="4dp"
                 app:cardElevation="2dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/item_produk_dibeli_nama">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -91,7 +90,7 @@
                         android:text="0"
                         android:textAlignment="center"
                         android:textColor="@color/colorSuccess"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

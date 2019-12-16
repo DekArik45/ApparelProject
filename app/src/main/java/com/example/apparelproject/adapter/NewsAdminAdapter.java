@@ -138,7 +138,7 @@ public class NewsAdminAdapter extends RecyclerView.Adapter<NewsAdminAdapter.Cate
     class CategoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
         TextView title;
-        LinearLayout mCard;
+        CardView mCard;
         Button edit, delete;
         CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
