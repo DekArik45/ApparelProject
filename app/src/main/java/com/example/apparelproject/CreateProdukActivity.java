@@ -130,9 +130,9 @@ public class CreateProdukActivity extends AppCompatActivity {
     public static Bitmap scaleDown(Bitmap realImage,
                                    boolean filter) {
 //        jika image lebih besar dari 1500 x 1500 maka image di ubah menjadi 800 x800
-        if (realImage.getWidth() > 400 || realImage.getHeight() > 600){
-            Bitmap newbitmap = Bitmap.createScaledBitmap(realImage, 400,
-                    600, filter);
+        if (realImage.getWidth() > 500 || realImage.getHeight() > 600){
+            Bitmap newbitmap = Bitmap.createScaledBitmap(realImage, 500,
+                    500, filter);
             return newbitmap;
         }
         else{

@@ -71,7 +71,7 @@ public class NewsAdminAdapter extends RecyclerView.Adapter<NewsAdminAdapter.Cate
             public void onClick(View v) {
                 Intent i = new Intent(context.getApplicationContext(), EditNewsActivity.class);
                 i.putExtra(Config.COLUMN_NEWS_IMAGE, getListNews().get(position).getImage());
-                i.putExtra(Config.COLUMN_NEWS_ID, getListNews().get(position).getId());
+                i.putExtra(Config.COLUMN_NEWS_ID, String.valueOf(getListNews().get(position).getId()));
                 i.putExtra(Config.COLUMN_NEWS_JUDUL, getListNews().get(position).getJudul());
                 i.putExtra(Config.COLUMN_NEWS_DESKRIPSI, getListNews().get(position).getDeskripsi());
 

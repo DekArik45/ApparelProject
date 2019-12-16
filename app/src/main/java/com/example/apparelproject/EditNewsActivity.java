@@ -29,7 +29,7 @@ public class EditNewsActivity extends AppCompatActivity {
     ImageView imageView;
     Bitmap bitmapFoto;
     byte[] imageByte = null;
-    String nama, deskripsi,id;
+    String nama, deskripsi,idNews;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class EditNewsActivity extends AppCompatActivity {
         nama = data.getStringExtra(Config.COLUMN_NEWS_JUDUL);
         deskripsi = data.getStringExtra(Config.COLUMN_NEWS_DESKRIPSI);
         imageByte = data.getByteArrayExtra(Config.COLUMN_NEWS_IMAGE);
-        id = data.getStringExtra(Config.COLUMN_NEWS_ID);
+        idNews = data.getStringExtra(Config.COLUMN_NEWS_ID);
 
         mNama = findViewById(R.id.edit_news_judul);
         mDeskripsi = findViewById(R.id.edit_news_deskripsi);
@@ -81,7 +81,7 @@ public class EditNewsActivity extends AppCompatActivity {
         nama = mNama.getText().toString();
         deskripsi = mDeskripsi.getText().toString();
 
-        NewsModel news = new NewsModel(Integer.parseInt(id),nama,deskripsi,imageByte);
+        NewsModel news = new NewsModel(Integer.parseInt(idNews),nama,deskripsi,imageByte);
         NewsQuery query = new NewsQuery(getApplicationContext());
 
         long id =query.updateNews(news);
